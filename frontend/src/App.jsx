@@ -4,9 +4,12 @@ import axios from "axios";
 function App() {
   const [records, setRecords] = useState([]);
 
+  const BASE_URL =
+    "https://breathe-esg-assignment-v2q3.onrender.com";
+
   const ingestSapData = () => {
     axios
-      .post("http://127.0.0.1:8000/api/ingest-sap/")
+      .post(`${BASE_URL}/api/ingest-sap/`)
       .then(() => {
         window.location.reload();
       })
@@ -18,7 +21,7 @@ function App() {
   const updateStatus = (recordId, status) => {
     axios
       .post(
-        `http://127.0.0.1:8000/api/records/${recordId}/status/`,
+        `${BASE_URL}/api/records/${recordId}/status/`,
         {
           status: status,
         }
@@ -33,7 +36,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/records/")
+      .get(`${BASE_URL}/api/records/`)
       .then((response) => {
         setRecords(response.data);
       })
