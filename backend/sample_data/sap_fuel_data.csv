@@ -1,0 +1,5 @@
+plant_code,fuel_type,quantity,unit,date
+PLANT_101,Diesel,500,liters,2026-05-01
+PLANT_102,Petrol,300,liters,2026-05-03
+PLANT_103,Natural Gas,1200,m3,2026-05-05
+PLANT_104,Diesel,999999,liters,2026-05-06
